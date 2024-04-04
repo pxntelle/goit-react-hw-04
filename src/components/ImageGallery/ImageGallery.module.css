@@ -1,0 +1,16 @@
+.imgGallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+  background-color: #8d9eff;
+  list-style-type: none;
+}
+
+img {
+  width: 280px;
+  height: 216px;
+  justify-content: center;
+  border-radius: 15px;
+}

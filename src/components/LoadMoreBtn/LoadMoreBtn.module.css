@@ -1,0 +1,22 @@
+.loadMoreBtn {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #33ff92;
+  outline: none;
+  width: 160px;
+  height: 48px;
+  border: 3px solid white;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 20px;
+  transition: 0.35s;
+}
+
+.button:hover {
+  background-color: white;
+}
