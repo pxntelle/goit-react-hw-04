@@ -1,7 +1,7 @@
 import css from "./SearchBar.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { CiSearch } from "react-icons/ci";
-import { fetchImgs } from "../../imgs-api";
+// import { fetchImgs } from "../../imgs-api";
 import { Formik, Form, Field } from "formik";
 
 export default function SearchBar({ onSearch }) {
@@ -16,18 +16,21 @@ export default function SearchBar({ onSearch }) {
       toast.error("Who doesn't search, will never find.........");
       return;
     }
+    onSearch(searchQuery);
 
-    try {
-      const { total } = await fetchImgs({ query: searchQuery });
-      if (total === 0) {
-        toast.error("Oops! No images found. Try different request.");
-      } else {
-        toast.success(`Hooray! We found ${total} images.`);
-        onSearch(searchQuery);
-      }
-    } catch (error) {
-      console.error("Oops! Error loading images.", error);
-    }
+    //---------------- функціонал для відображення кількості знайдених картинок та повернення нульового результату ---------
+
+    // try {
+    //   const { total } = await fetchImgs({ query: searchQuery });
+    //   if (total === 0) {
+    //     toast.error("Oops! No images found. Try different request.");
+    //   } else {
+    //     toast.success(`Hooray! We found ${total} images.`);
+    //     onSearch(searchQuery);
+    //   }
+    // } catch (error) {
+    //   console.error("Oops! Error loading images.", error);
+    // }
 
     actions.resetForm(); // скинути значення форми
   };
